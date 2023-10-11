@@ -3,6 +3,7 @@ import React from "react";
 import iconList from "../../public/icon-list.svg";
 import bannerMobile from "../../public/illustration-sign-up-desktop.svg";
 import bannerDesktop from "../../public/illustration-sign-up-desktop.svg";
+
 const FirstPage = () => {
   return (
     <main className="bg-gray-700 w-full flex min-h-screen justify-center items-center">

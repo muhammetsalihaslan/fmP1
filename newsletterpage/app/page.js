@@ -1,9 +1,9 @@
-import FirstPage from "./firstpage/page";
+import Confirmed from "./confirmed/page";
 
 export default function Home() {
   return (
     <>
-      <FirstPage />
+      <Confirmed />
     </>
   );
 }
