@@ -5,38 +5,38 @@ import bannerMobile from "../../public/illustration-sign-up-desktop.svg";
 import bannerDesktop from "../../public/illustration-sign-up-desktop.svg";
 const FirstPage = () => {
   return (
-    <main className="bg-gray-700 w-full min-h-screen flex justify-center items-center">
-      <div className="bg-white w-2/4 md:h-3/4 flex flex-col md:flex-row-reverse gap-12 p-4 md:rounded-3xl md:p-8">
-        <div id="banner" className="h-full -m-4">
-          <div id="banner-mobile">
+    <main className="bg-gray-700 w-full flex min-h-screen justify-center items-center">
+      <div className="md:h-3/4 flex flex-col md:flex-row-reverse gap-12 p-4 bg-white  md:rounded-3xl md:p-8 ">
+        <div id="banner" className="h-full -m-4 ">
+          <div id="banner-mobile" className="">
             <Image
-              className="w-full object-contain md:hidden"
+              className="w-full object-contain  md:hidden"
               src={bannerMobile}
               alt="Banner Mobile"
             />
           </div>
-          <div id="banner-desktop">
+          <div id="banner-desktop ">
             <Image
-              className="object-contain md:block"
+              className="object-contain hidden md:block"
               src={bannerDesktop}
               alt="Banner Desktop"
             />
           </div>
         </div>
-        <div className="mt-20 ml-8 w-2/4npm run de">
-          <h1 className="font-bold text-4xl text-slate-700 ">Stay Updated</h1>
-          <div className="flex flex-col gap-5">
-            <p className="mt-6 ">
-              Join 60,000+ product mangers receiving montly updates on:
-            </p>
-            <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-8 justify-center md:p-8">
+          <div className="font-bold text-4xl text-gray-700">Stay Updated!</div>
+          <div className="flex flex-col gap-4">
+            <div>
+              Join 60,000+ product managers receiving monthly updates on:
+            </div>
+            <div className="flex flex-col gap-2">
               <div className="flex items-start gap-4">
                 <Image src={iconList} alt="icon List" />
                 <p>Product discovery and building what matters</p>
               </div>
               <div className="flex items-start gap-4">
                 <Image src={iconList} alt="icon List" />
-                <p>Measuring to ensure updates are a success</p>
+                <p>Measuring to ensure updates are a succes</p>
               </div>
               <div className="flex items-start gap-4">
                 <Image src={iconList} alt="icon List" />
@@ -44,11 +44,18 @@ const FirstPage = () => {
               </div>
             </div>
           </div>
-          <form className="flex flex-col gap-4">
-            <div className="grid grid-cols-2 gap-2">
+          <form action="" className="flex flex-col gap-4">
+            <div className="grid grid-cols-2">
               <input
                 type="email"
-                className="border border-gray-700/25 rounded-lg px-4 py-4 peer col-span-2 order-last invalid:border-red-500 "
+                className="border border-opacity-30 border-gray-700 rounded-lg px-4 py-4 peer col-span-2 order-last invalid:border-red-500
+                invalid:bg-tomato
+                invalid:bg-opacity-20
+                invalid:text-tomato
+                invalid:focus:border-red-500
+                invalid:active:border-red-500
+                invalid:focus-visible:outline-red-500"
+                placeholder="email@company.com"
                 id="email"
                 name="email"
                 required
@@ -57,15 +64,15 @@ const FirstPage = () => {
                 htmlFor="email"
                 className="text-sm text-gray-700 font-bold"
               >
-                Email adress
+                Email address
               </label>
-              <span className="text-sm text-tomato font-bold invisible peer-invalid:visible text-end">
+              <span className="text-sm text-red-500 font-bold invisible peer-invalid:visible text-end">
                 Valid email required
               </span>
             </div>
             <button
               type="submit"
-              className="bg-gray-700 hover:bg-tomato rounded-lg px-4 py-4 text-white font-semibold"
+              className="rounded-lg px-4 py-4 text-white bg-gray-700 hover:bg-red-500  font-semibold"
             >
               Subscribe to montly newsletter
             </button>
