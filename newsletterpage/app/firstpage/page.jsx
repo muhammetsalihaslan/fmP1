@@ -1,13 +1,27 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import iconList from "../../public/icon-list.svg";
 import bannerMobile from "../../public/illustration-sign-up-desktop.svg";
 import bannerDesktop from "../../public/illustration-sign-up-desktop.svg";
+import Confirmed from "../confirmed/page";
+import { useRouter } from "next/navigation";
 
 const FirstPage = () => {
+  const [email, setEmail] = useState("");
+  const router = useRouter();
+
+  const handleChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    router.push("/confirmed");
+  };
   return (
     <main className="bg-gray-700 w-full flex min-h-screen justify-center items-center">
-      <div className="md:h-3/4 flex flex-col md:flex-row-reverse gap-12 p-4 bg-white  md:rounded-3xl md:p-8 ">
+      <div className="min-h-screen md:min-h-0 md:w-2.5/4 md:h-3/4 flex flex-col md:flex-row-reverse gap-12 p-4 bg-white  md:rounded-3xl md:p-8 ">
         <div id="banner" className="h-full -m-4 ">
           <div id="banner-mobile" className="">
             <Image
@@ -45,7 +59,7 @@ const FirstPage = () => {
               </div>
             </div>
           </div>
-          <form action="" className="flex flex-col gap-4">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <div className="grid grid-cols-2">
               <input
                 type="email"
@@ -60,6 +74,8 @@ const FirstPage = () => {
                 id="email"
                 name="email"
                 required
+                value={email}
+                onChange={handleChange}
               />
               <label
                 htmlFor="email"
