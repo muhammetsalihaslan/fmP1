@@ -3,7 +3,11 @@ import Image from "next/image";
 import React from "react";
 import iconSuccess from "../../public/icon-success.svg";
 
-const Confirmed = ({ email, setSuccess }) => {
+const Confirmed = ({ email, setSuccess, setEmail }) => {
+  const handleClick = () => {
+    setSuccess(false);
+    setEmail("");
+  };
   return (
     <main className="bg-gray-700 w-full min-h-screen flex justify-center items-center">
       <div className="min-h-screen md:min-h-0 md:w-[28rem] flex flex-col justify-between gap-12 p-8 bg-white md:rounded-3xl md:p-8 ">
@@ -23,7 +27,7 @@ const Confirmed = ({ email, setSuccess }) => {
           </div>
         </div>
         <button
-          onClick={() => setSuccess(false)}
+          onClick={handleClick}
           className="px-4 py-4 bg-gray-700 text-white rounded-xl hover:bg-red-500 "
         >
           Dismiss massege

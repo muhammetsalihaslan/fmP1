@@ -101,7 +101,9 @@ const FirstPage = () => {
           </div>
         </main>
       )}
-      {success && <Confirmed email={email} setSuccess={setSuccess} />}
+      {success && (
+        <Confirmed email={email} setSuccess={setSuccess} setEmail={setEmail} />
+      )}
     </>
   );
 };
